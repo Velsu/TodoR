@@ -6,7 +6,7 @@ class TodoItem
 		@complete = false
 	end
 
-#default method for printing stuff on screen
+#default method for printing stuff on screen. It will filter completed and incompleted items
 	def to_s
 		if complete?
 			"[C] #{name}"
