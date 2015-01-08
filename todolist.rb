@@ -57,4 +57,24 @@ class TodoList
 		end
 	end
 
+#method for printing items based on the argument. If default value is set to all it will print all the items. 
+#output is alreay properly formatted thanks to redefining "to_s" method in todoitems.rb
+	def print_list(type='all')
+
+		puts "{#name} List - #{type} items"
+		print '-' * 30 + "\n"
+
+
+
+		todo_items.each do |item|
+			case type
+			when 'all'
+			puts item
+		when 'complete'
+			puts item if item.complete?
+		when 'incomplete'
+			puts item unless item.complete?
+		end
+		end
+	end
 end
